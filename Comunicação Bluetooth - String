@@ -1,0 +1,34 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(10, 11); // RX, TX
+
+String x = "";
+void setup(){
+ 
+  Serial.begin(9600);
+  while (!Serial) {
+    ; 
+  }
+  Serial.println("Serial Teste: ");
+  mySerial.begin(9600);
+  mySerial.println("mySerial Teste: ");
+}
+
+
+void loop()   {
+  if(mySerial.available()){ //Celular envia
+    x = mySerial.readString();
+    mySerial.print("Enviei ");
+    mySerial.println(x);
+    Serial.print("Recebi ");
+    Serial.println(x);
+  }
+
+  if(Serial.available()){ //Monitor envia
+    x = Serial.readString();
+    Serial.print("Enviei ");
+    Serial.println(x);
+    mySerial.print("Recebi ");
+    mySerial.println(x);
+  }
+}
