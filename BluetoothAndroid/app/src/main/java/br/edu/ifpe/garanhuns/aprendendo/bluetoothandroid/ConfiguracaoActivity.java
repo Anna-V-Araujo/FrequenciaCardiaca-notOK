@@ -67,8 +67,8 @@ public class ConfiguracaoActivity extends AppCompatActivity {
 
 
     public void discoverDevices(View view) {
-        Intent searchPairedDevicesIntent = new Intent(this, DiscoveredDevices.class);
-        startActivityForResult(searchPairedDevicesIntent, SELECT_DISCOVERED_DEVICE);
+        Intent searchDiscoveredDevicesIntent = new Intent(this, DiscoveredDevices.class);
+        startActivityForResult(searchDiscoveredDevicesIntent, SELECT_DISCOVERED_DEVICE);
     }
 
     @Override

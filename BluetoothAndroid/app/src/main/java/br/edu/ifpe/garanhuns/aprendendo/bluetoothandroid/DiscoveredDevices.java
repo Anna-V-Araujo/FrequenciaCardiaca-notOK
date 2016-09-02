@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,8 +35,8 @@ public class DiscoveredDevices extends ListActivity {
         //Adiciciona um título a lista
         ListView lv = getListView();
         LayoutInflater inflater = getLayoutInflater();
-        View header = inflater.inflate(R.layout.text_header, lv, false);
-        ((TextView) header.findViewById(R.id.editText_MessageBox)).setText("\nDispositivos próximos\n");
+        View header = inflater.inflate(R.layout.activity_configuracao, lv, false);
+        ((EditText) header.findViewById(R.id.editText_MessageBox)).setText("\nDispositivos próximos\n");
         lv.addHeaderView(header, null, false);
 
         //Modelo da lista
